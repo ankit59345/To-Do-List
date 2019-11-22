@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>To-Do</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="to-do.css"
+  </head>
+  <body bgcolor="#DDEBFF">
+    <h1 class="heading"><big><big><big><big>To-Do List</big></big></big></big></h1>
+    <p align="center"><big><big><big><big><b>Enter Task :</b></big></big></big></big>
+    <input type="text" name="add" placeholder="Enter Value" id="input">
+    <button class='btn1' onclick="myFunction()">Add</button></p>
+    <div class="box">
+      <p align='center' class='par'><big><b>To Do Tasks Will be displayed here</b></big></p>
+      <ul style='list-style-type: none;'>
+      </ul>
+      <hr class='l1'>
+      <ul style='list-style-type: none;' id='list'>
+      </ul>
+      <hr class='l1'>
+    </div>
+    <script>
+      var list = document.getElementById("list");
+      console.log(list);
+      function myFunction(){
+        console.log("in here")
+        var textt = document.getElementById("input").value
+        if(textt == ''){
+          window.alert("Enter Some Value!");
+          return;
+        }
+        console.log(textt)
+        if(list.childNodes.length > 1){
+          var hr = document.createElement("hr");
+          hr.setAttribute("class", "line2");
+          list.appendChild(hr);
+        }
+        var textnode = document.createTextNode(textt);
+        var lii = document.createElement("li");
+        lii.setAttribute("class", "li");
+        var spanl = document.createElement("span")
+        spanl.appendChild(textnode)
+        spanl.setAttribute("class", "left");
+        lii.appendChild(spanl);
+        var btn2 = document.createElement("input");
+        btn2.setAttribute("class", "btn2");
+        btn2.setAttribute("type", "button");
+        btn2.setAttribute("value", "Delete");
+        btn2.setAttribute("align", "right");
+        var spanr = document.createElement('span');
+        spanr.setAttribute("class", "right");
+        spanr.appendChild(btn2);
+        var br1 = document.createElement("br");
+        var br2 = document.createElement("br");
+        lii.appendChild(spanr)
+        lii.appendChild(br1);
+        //lii.appendChild(br2);
+        list.appendChild(lii);
+      }
+    </script>
+  </body>
+</html>

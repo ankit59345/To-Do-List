@@ -35,27 +35,27 @@
           hr.setAttribute("class", "line2");
           list.appendChild(hr);
         }
+        var divr = document.createElement("div");
+        var div1 = document.createElement("div");
+        var div2 = document.createElement("div");
+        divr.setAttribute("class", "row");
+        div1.setAttribute("class", "column");
         var textnode = document.createTextNode(textt);
-        var lii = document.createElement("li");
-        lii.setAttribute("class", "li");
-        var spanl = document.createElement("span")
-        spanl.appendChild(textnode)
-        spanl.setAttribute("class", "left");
-        lii.appendChild(spanl);
+        div1.appendChild(textnode);
+        div2.setAttribute("class", "column1");
         var btn2 = document.createElement("input");
         btn2.setAttribute("class", "btn2");
         btn2.setAttribute("type", "button");
         btn2.setAttribute("value", "Delete");
-        btn2.setAttribute("align", "right");
-        var spanr = document.createElement('span');
-        spanr.setAttribute("class", "right");
-        spanr.appendChild(btn2);
-        var br1 = document.createElement("br");
-        var br2 = document.createElement("br");
-        lii.appendChild(spanr)
-        lii.appendChild(br1);
-        //lii.appendChild(br2);
+        div2.appendChild(btn2);
+        divr.appendChild(div1);
+        divr.appendChild(div2);
+        var lii = document.createElement("li");
+        lii.setAttribute("class", "li");
+        lii.appendChild(divr);
         list.appendChild(lii);
+        var br1 = document.createElement("br");
+        lii.appendChild(br1);
       }
     </script>
   </body>
